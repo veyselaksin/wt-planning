@@ -1,0 +1,88 @@
+basePath: /v1
+definitions:
+  messagedto.MessageRecipientsResponse:
+    properties:
+      content:
+        type: string
+      id:
+        type: string
+      phoneNumber:
+        type: string
+      status:
+        type: string
+    type: object
+  messagedto.SendMessageRequest:
+    properties:
+      tickerStatus:
+        type: string
+    type: object
+info:
+  contact:
+    email: fiber@swagger.io
+    name: API Support
+  description: This is a server for Insider Case Study API.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Insider Case Study API
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - '*/*'
+      description: Welcome to Trendbox POS API
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Welcome API
+      tags:
+      - Health Check
+  /message/:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint is used to send message every 2 minutes when tickerStatus
+        parameter is start
+      parameters:
+      - description: Send message requests
+        in: body
+        name: sendMessageRequest
+        required: true
+        schema:
+          $ref: '#/definitions/messagedto.SendMessageRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Send message
+      tags:
+      - Message
+  /message/recipients:
+    get:
+      consumes:
+      - application/json
+      description: This endpoint is used to get all message recipients
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/messagedto.MessageRecipientsResponse'
+            type: array
+      summary: Get message recipients
+      tags:
+      - Message
+swagger: "2.0"

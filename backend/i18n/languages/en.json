@@ -1,0 +1,10 @@
+{
+  "healthy": "Healthy",
+  "unexpected_error": "An unexpected error occurred.",
+  "bad_request_error": "Bad request.",
+  "success": "Success",
+  "record_not_found": "Record not found.",
+  "required_field": "{{.Field}} field is missing.",
+  "required_fields": "{{.Fields}} fields are missing.",
+  "invalid_format": "{{.Field}} field is invalid."
+}

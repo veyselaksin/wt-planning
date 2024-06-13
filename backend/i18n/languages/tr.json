@@ -1,0 +1,10 @@
+{
+  "healthy": "Uygulama sağlıklı.",
+  "unexpected_error": "Bilinmeyen bir hata oluştu.",
+  "bad_request_error": "Geçersiz istek.",
+  "success": "İşlem başarılı.",
+  "record_not_found": "Kayıt bulunamadı.",
+  "required_field": "{{.Field}} alanı zorunludur.",
+  "required_fields": "{{.Fields}} alanları zorunludur.",
+  "invalid_format": "{{.Field}} alanı geçersiz formatta."
+}
